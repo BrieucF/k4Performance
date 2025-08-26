@@ -3,8 +3,7 @@ from Gaudi.Configuration import INFO, DEBUG
 import os
 # run first a simulation to have the needed input ingredients
 os.system("ddsim --enableGun --gun.distribution uniform --gun.energy '5*GeV' --gun.particle e- --numberOfEvents 10 --outputFile ALLEGRO_sim.root --random.enableEventSeed --random.seed 42 --compactFile $K4GEO/FCCee/ALLEGRO/compact/ALLEGRO_o1_v03/ALLEGRO_o1_v03.xml")
-#os.system("k4run $FCCCONFIG/share/FCC-config/FullSim/ALLEGRO/ALLEGRO_o1_v03/run_digi_reco.py --IOSvc.Input ALLEGRO_sim.root --IOSvc.Output ALLEGRO_sim_digi_reco.root")
-os.system("k4run $FCCCONFIG/share/FCC-config/FullSim/ALLEGRO/ALLEGRO_o1_v03/run_digi_reco.py --IOSvc.Input ALLEGRO_sim.root --IOSvc.Output ALLEGRO_sim_digi_reco.root --doTopoClustering False")
+os.system("k4run $FCCCONFIG/FullSim/ALLEGRO/ALLEGRO_o1_v03/run_digi_reco.py --IOSvc.Input ALLEGRO_sim.root --IOSvc.Output ALLEGRO_sim_digi_reco.root --doTopoClustering False")
 
 # Loading some files with MCParticles and clusters for testing purposes
 from k4FWCore import IOSvc
