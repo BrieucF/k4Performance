@@ -20,7 +20,7 @@ jobs:
   build:
     strategy:
       matrix:
-        build_type: ["release", "nightly"]
+        build_type: ["nightly"]
         image: ["alma9"]
         stack: ["key4hep"]
         include:
